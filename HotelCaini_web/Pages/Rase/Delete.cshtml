@@ -1,0 +1,28 @@
+﻿@page
+@model HotelCaini_web.Pages.Rase.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Șterge o rasă</h1>
+
+<h3>Ești sigur că vrei să ștergi această rasă?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rasa.nume_rasa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rasa.nume_rasa)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Rasa.ID" />
+        <input type="submit" value="Șterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Înapoi la lista cu rasele câinilor</a>
+    </form>
+</div>

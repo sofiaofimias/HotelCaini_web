@@ -1,0 +1,46 @@
+﻿@page
+@model HotelCaini_web.Pages.Rezervari.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Ștergere rezervare</h1>
+
+<h3>Ești sigur că vrei să ștergi această rezervare?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Nume_stapan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Nume_stapan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Nume_caine)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Nume_caine)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.data_venire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.data_venire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.data_plecare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.data_plecare)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Rezervare.ID" />
+        <input type="submit" value="Șterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Înapoi la rezervările mele</a>
+    </form>
+</div>

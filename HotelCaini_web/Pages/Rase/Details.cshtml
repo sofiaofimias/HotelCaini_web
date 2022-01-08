@@ -1,0 +1,25 @@
+﻿@page
+@model HotelCaini_web.Pages.Rase.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalii rase</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rasa.nume_rasa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rasa.nume_rasa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Rasa.ID">Editează</a> |
+    <a asp-page="./Index">Înapoi la lista cu rasele câinilor</a>
+</div>

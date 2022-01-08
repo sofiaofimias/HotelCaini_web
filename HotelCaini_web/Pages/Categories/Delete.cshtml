@@ -1,0 +1,28 @@
+﻿@page
+@model HotelCaini_web.Pages.Categories.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Șterge o cameră</h1>
+
+<h3>Ești sigur că vrei să ștergi această cameră?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Category.Nume_category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Category.Nume_category)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Category.ID" />
+        <input type="submit" value="Șterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Înapoi la camere</a>
+    </form>
+</div>

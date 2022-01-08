@@ -1,0 +1,34 @@
+﻿@page
+@model HotelCaini_web.Pages.Categories.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crează o categorie de cameră</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Category.Nume_category" class="control-label"></label>
+                <input asp-for="Category.Nume_category" class="form-control" />
+                <span asp-validation-for="Category.Nume_category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Înapoi la camere</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

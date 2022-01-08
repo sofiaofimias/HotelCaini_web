@@ -1,0 +1,82 @@
+﻿@page
+@model HotelCaini_web.Pages.Rezervari.IndexModel
+
+@{
+    ViewData["Title"] = "Rezervări";
+}
+
+<h1>Rezervări</h1>
+
+<p>
+    <a asp-page="Create">Crează aici o nouă rezervare</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Nume_stapan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Nume_caine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].data_venire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].data_plecare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Rasa.nume_rasa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].RezervareCategories)
+            </th>
+
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RezervareD.Rezervari)
+        {
+            string selectedRow = "";
+            if (item.ID == Model.RezervareID)
+            {
+                selectedRow = "table-success";
+            }
+
+        <tr class="@selectedRow">
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume_stapan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume_caine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_venire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_plecare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rasa.nume_rasa)
+            </td>
+
+            <td>
+                @{
+                    foreach (var category in item.RezervareCategories)
+                    {
+                        @category.Category.ID @: @category.Category.Nume_category <br />
+                    }
+                }
+            </td>
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editează</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Ștergere</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

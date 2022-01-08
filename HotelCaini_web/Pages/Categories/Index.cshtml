@@ -1,0 +1,36 @@
+﻿@page
+@model HotelCaini_web.Pages.Categories.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tipuri de camere disponibile</h1>
+
+<p>
+    <a asp-page="Create">Crează o nouă cameră</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].Nume_category)
+            </th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Category) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume_category)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editează</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Ștergere</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

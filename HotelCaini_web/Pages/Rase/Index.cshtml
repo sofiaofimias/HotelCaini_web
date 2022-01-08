@@ -1,0 +1,37 @@
+﻿@page
+@model HotelCaini_web.Pages.Rase.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Adaugă o nouă rasă dacă nu o găsești în listă</h1>
+
+<p>
+    <a asp-page="Create">Rasă nouă</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rasa[0].nume_rasa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Rasa) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nume_rasa)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editează</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Șterge</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

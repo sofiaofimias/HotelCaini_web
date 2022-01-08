@@ -1,0 +1,46 @@
+﻿@page
+@model HotelCaini_web.Pages.Rezervari.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Nume_stapan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Nume_stapan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Nume_caine)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Nume_caine)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.data_venire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.data_venire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.data_plecare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.rasaID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.rasaID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Rezervare.ID">Editează rezervarea</a> |
+    <a asp-page="./Index">Înapoi la rezervările mele</a>
+</div>
